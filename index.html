@@ -2,64 +2,30 @@
 <html>
 
 <head>
-    <link href='style.css' rel="stylesheet">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-
-
+    <title>Doggo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="style.css" rel="stylesheet">
 </head>
 
-<body onload="init()">
+<body>
+
     <div id="banner-message">
-        <p>Select a Breed</p>
-
-        <select class="breed_select">
-            <option></option>
-        </select>
+        <a href="index.html"><img src="logo.png" id="logo"></a>
+        <br />
+        <a href="breed.html">Dogs By breed</a>
 
     </div>
-    <div id="breed_data">
-        <img id="breed_image" src="" />
-        <p>
-            Breed Data
-        </p>
-        <table id="breed_data_table">
 
-        </table>
     </div>
 
-    <script>
+</body>
 
-        function init() {
-            var $breed_select = document.getElementById('breed_select');
-
-            var request = new XMLHttpRequest();
-
-            request.open('GET', 'https://api.thedogapi.com/v1/breeds');
-
-            request.onload = function (data) {
-                populateBreedsSelect(data)
-            }
-        }
-
-
-        // Put the breeds in the Select control
-        function populateBreedsSelect(breeds) {
-            $breed_select.empty().append(function () {
-                var output = '';
-                $.each(breeds, function (key, value) {
-                    output += '<option id="' + value.id + '">' + value.name + '</option>';
-                });
-                return output;
-            });
-        }
-
-    </script>
+</html>
 
 
 
 
-    <!--
+<!--
 
 
 
